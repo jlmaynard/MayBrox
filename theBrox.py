@@ -28,14 +28,22 @@ with open('input.txt') as in_file:
         if clean_line and not clean_line.startswith("#"):  # is not empty
             the_data.append(clean_line)
 
-# CALCULATE AND PRINT THE RESULTS  ---------------------------------------------
-out_file = open('output.txt', 'w')
 
-the_data_dict = counter_class.Counter(the_data)
-for keys, values in the_data_dict.items():
-    out_file.write(keys + '\n')
-    out_file.write(str(values) + '\n')
+def my_counter(data):
+    """Counter function to find the occurrences of the words in the data
+     Returns a dictionary of values and counts. """
+    return counter_class.Counter(data)
 
-# Find the max value
-out_file.write('\nThe most common value is:\n')
-out_file.write(max(the_data_dict, key=lambda x: the_data_dict.get(x)))
+# Run the main() if this is the main file. -------------------------------------
+if __name__ == "__main__":
+    # CALCULATE AND PRINT THE RESULTS  -----------------------------------------
+    out_file = open('output.txt', 'w')
+
+    the_data_dict = my_counter(the_data)
+    for keys, values in the_data_dict.items():
+        out_file.write(keys + '\n')
+        out_file.write(str(values) + '\n')
+
+    # Find the max value
+    out_file.write('\nThe most common value is:\n')
+    out_file.write(max(the_data_dict, key=lambda x: the_data_dict.get(x)))
