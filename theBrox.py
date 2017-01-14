@@ -47,3 +47,6 @@ if __name__ == "__main__":
     # Find the max value
     out_file.write('\nThe most common value is:\n')
     out_file.write(max(the_data_dict, key=lambda x: the_data_dict.get(x)))
+
+    # Don't forget to close that output file
+    out_file.close()
