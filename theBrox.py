@@ -15,7 +15,8 @@
 # :-)
 #
 
-from collections import Counter
+# from collections import Counter
+import counter_class
 
 # GET DATA ---------------------------------------------------------------------
 
@@ -30,11 +31,11 @@ with open('input.txt') as in_file:
 # CALCULATE AND PRINT THE RESULTS  ---------------------------------------------
 out_file = open('output.txt', 'w')
 
-the_data_dict = Counter(the_data)
+the_data_dict = counter_class.Counter(the_data)
 for keys, values in the_data_dict.items():
     out_file.write(keys + '\n')
     out_file.write(str(values) + '\n')
 
 # Find the max value
 out_file.write('\nThe most common value is:\n')
-out_file.write(max(the_data_dict, key = lambda x: the_data_dict.get(x)))
+out_file.write(max(the_data_dict, key=lambda x: the_data_dict.get(x)))
