@@ -20,14 +20,6 @@
 # from collections import Counter
 import counter_class
 
-# GET DATA ---------------------------------------------------------------------
-the_data = []
-with open('input.txt') as in_file:
-    for line in in_file:
-        clean_line = line.strip()
-        if clean_line and not clean_line.startswith("#"):  # is not empty
-            the_data.append(clean_line)
-
 # Function defs
 def my_counter(data):
     """Counter function to find the occurrences of the words in the data
@@ -35,6 +27,14 @@ def my_counter(data):
     return counter_class.Counter(data)
 
 if __name__ == "__main__":
+    # GET DATA -----------------------------------------------------------------
+    the_data = []
+    with open('input.txt') as in_file:
+        for line in in_file:
+            clean_line = line.strip()
+            if clean_line and not clean_line.startswith("#"):
+                the_data.append(clean_line)    
+    
     # CALCULATE AND PRINT THE RESULTS  -----------------------------------------
     out_file = open('output.txt', 'w')
 
