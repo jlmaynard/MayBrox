@@ -8,8 +8,10 @@
 # 0 0 0 0 0
 # 1 1 1 1 1
 #
-# Output: A sorted list of matching rows
-# Future mods: Sorted list of matching rows by closeness weighting
+# Output: A sorted list of strings by count
+# Future mods: Sorted list of matching strings by similarity weighting
+#
+# IDE = Wing Pro, 6.01
 #
 # Copyright "MayBrox Inc.", 2017
 # :-)
@@ -19,8 +21,6 @@
 import counter_class
 
 # GET DATA -------------------------------------------------------------------
-
-# This gets the input data..................................................
 the_data = []
 with open('input.txt') as in_file:
     for line in in_file:
@@ -34,7 +34,6 @@ def my_counter(data):
      Returns a dictionary of values and counts. """
     return counter_class.Counter(data)
 
-# Run the main() if this is the main file. -----------------------------------
 if __name__ == "__main__":
     # CALCULATE AND PRINT THE RESULTS  ---------------------------------------
     out_file = open('output.txt', 'w')
