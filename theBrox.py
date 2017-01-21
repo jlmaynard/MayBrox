@@ -1,5 +1,5 @@
-# This program reads an input file that represents an array of measurement data
-# in the following format:
+# This program reads an input file that represents an array of measurement 
+# data in the following format:
 # 0 1 0 1 0
 # 1 0 0 1 1
 # 0 0 1 1 0
@@ -18,7 +18,7 @@
 # from collections import Counter
 import counter_class
 
-# GET DATA ---------------------------------------------------------------------
+# GET DATA -------------------------------------------------------------------
 
 # This gets the input data..................................................
 the_data = []
@@ -34,15 +34,18 @@ def my_counter(data):
      Returns a dictionary of values and counts. """
     return counter_class.Counter(data)
 
-# Run the main() if this is the main file. -------------------------------------
+# Run the main() if this is the main file. -----------------------------------
 if __name__ == "__main__":
-    # CALCULATE AND PRINT THE RESULTS  -----------------------------------------
+    # CALCULATE AND PRINT THE RESULTS  ---------------------------------------
     out_file = open('output.txt', 'w')
 
     the_data_dict = my_counter(the_data)
     for keys, values in the_data_dict.items():
         out_file.write(keys + '\n')
         out_file.write(str(values) + '\n')
+        
+    for item in the_data_dict:
+        print item, the_data_dict[item]    
 
     # Find the max value
     out_file.write('\nThe most common value is:\n')
