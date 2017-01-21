@@ -1,10 +1,14 @@
+# We can put comments in here too! 
+0 0 0 0 0
 0 0 0 0 0
 1 1 1 1 1
 1 0 1 0 1
 0 1 0 1 0
-0 0 0 0 0
 1 0 1 0 1
 1 0 1 0 1
+1 0 1 1 0
+# The good news is that comments don't affect the math or output... 
+0 0 0 1 1
+0 0 0 0 0 
 1 0 1 0 1
-0 1 0 1 0
-1 0 1 0 1
+1 0 1 1 0

@@ -39,17 +39,16 @@ if __name__ == "__main__":
     # CALCULATE AND PRINT THE RESULTS  ---------------------------------------
     out_file = open('output.txt', 'w')
 
+    # Create a dictionary of strings and counts from the_data
     the_data_dict = my_counter(the_data)
-    for keys, values in the_data_dict.items():
-        out_file.write(keys + '\n')
-        out_file.write(str(values) + '\n')
         
-    for item in the_data_dict:
-        print item, the_data_dict[item]    
+    # Print the column headers
+    print "{:<20} {:<10}".format('String', 'Count')
+    out_file.write("{:<20} {:<10}\n".format('String', 'Count'))
+    
+    # Print the values
+    for item in sorted(the_data_dict, key=the_data_dict.get, reverse=True):
+        print "{:<20} {:<10}".format(item, the_data_dict[item])
+        out_file.write("{:<20} {:<10}\n".format(item, the_data_dict[item]))
 
-    # Find the max value
-    out_file.write('\nThe most common value is:\n')
-    out_file.write(max(the_data_dict, key=lambda x: the_data_dict.get(x)))
-
-    # Don't forget to close that output file
     out_file.close()
