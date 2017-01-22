@@ -8,13 +8,13 @@
 # 0 0 0 0 0
 # 1 1 1 1 1
 #
-# Output: A sorted list of strings by count
-# Future mods: Sorted list of matching strings by similarity weighting
+# Output: 
+# 1. A sorted list of strings by count.
+# 2. Hamming distance between all combinations of strings. 
 #
 # IDE = Wing Pro, 6.01
-#
-# Copyright "MayBrox Inc.", 2017
-# :-)
+# Author: Jason L Maynard
+# Date: 1/22/2017
 #
 
 # from collections import Counter
