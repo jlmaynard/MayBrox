@@ -26,6 +26,11 @@ def my_counter(data):
      Returns a dictionary of values and counts. """
     return counter_class.Counter(data)
 
+def hamming_dist(s1, s2):
+    """Calculate the Hamming distance between two bit strings"""
+    assert len(s1) == len(s2)
+    return sum(c1 != c2 for c1, c2 in zip(s1, s2))
+
 if __name__ == "__main__":
     # GET DATA -----------------------------------------------------------------
     the_data = []
@@ -37,17 +42,33 @@ if __name__ == "__main__":
     
     # CALCULATE AND PRINT THE RESULTS  -----------------------------------------
     out_file = open('output.txt', 'w')
+    out_buff = []
 
     # Create a dictionary of strings and counts from the_data
     the_data_dict = my_counter(the_data)
         
     # Print the column headers
-    print "{:<20} {:<10}".format('String', 'Count')
-    out_file.write("{:<20} {:<10}\n".format('String', 'Count'))
+    out_file.write("{:<20} {:<10}\n".format('String', 'Sorted Count'))
     
     # Print the values
     for item in sorted(the_data_dict, key=the_data_dict.get, reverse=True):
-        print "{:<20} {:<10}".format(item, the_data_dict[item])
+        #print "{:<20} {:<10}".format(item, the_data_dict[item])
         out_file.write("{:<20} {:<10}\n".format(item, the_data_dict[item]))
+        out_buff.append(item)
+    
+    # Find the distances between each string
+    out_file.write('\n===========================================\n')
+    out_file.write('Hamming distances from string to string:\n')
+    out_file.write('Finds all combinations of distance between\n')
+    out_file.write('strings starting with the first string\n')
+    out_file.write('of highest count.\n')
+    out_file.write('===========================================')
+    
+    for i in range(len(out_buff) - 1):
+        out_file.write("\nString {} distance to remaining strings\n".format(i + 1))
+        
+        for j in range(i + 1, len(out_buff)):
+            distance = hamming_dist(out_buff[i], out_buff[j])
+            out_file.write(str(distance) + '\n')
 
     out_file.close()
