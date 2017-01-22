@@ -1,3 +1,7 @@
+# IDE = Wing Pro, 6.01
+# Author: Jason L Maynard
+# Date: 1/22/2017
+
 # This program reads an input file that represents an array of measurement 
 # data in the following format:
 # 0 1 0 1 0
@@ -7,17 +11,11 @@
 # 0 0 0 0 1
 # 0 0 0 0 0
 # 1 1 1 1 1
-#
+
 # Output: 
 # 1. A sorted list of strings by count.
 # 2. Hamming distance between all combinations of strings. 
-#
-# IDE = Wing Pro, 6.01
-# Author: Jason L Maynard
-# Date: 1/22/2017
-#
 
-# from collections import Counter
 import counter_class
 
 # Function defs
